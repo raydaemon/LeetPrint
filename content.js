@@ -12,7 +12,7 @@ function printProblem() {
   document.body.appendChild(f);
   const d = f.contentDocument;
   d.open();
-  d.write(`<!doctype html><html><head><meta charset="utf-8"><title>${title}</title>
+  d.write(`<!doctype html><html><head><meta charset="utf-8">
 <style>
   body{font:14px/1.6 -apple-system,Segoe UI,Helvetica,Arial,sans-serif;max-width:800px;margin:32px auto;padding:0 16px;color:#111}
   h1{font-size:22px;margin:0 0 4px}
@@ -24,9 +24,12 @@ function printProblem() {
   table{border-collapse:collapse;margin:8px 0}
   td,th{border:1px solid #999;padding:4px 8px}
 </style></head><body>
-<h1>${title}</h1><div class="diff">${difficulty}</div>${desc.innerHTML}
+<h1></h1><div class="diff"></div>${desc.innerHTML}
 </body></html>`);
   d.close();
+  d.title = title;
+  d.querySelector('h1').textContent = title;
+  d.querySelector('.diff').textContent = difficulty;
   f.contentWindow.onafterprint = () => f.remove();
   f.contentWindow.focus();
   f.contentWindow.print();
