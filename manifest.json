@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "LeetPrint",
+  "version": "1.0.3",
+  "description": "Adds a Print button to LeetCode problem pages.",
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/problems/*", "https://leetcode.cn/problems/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
