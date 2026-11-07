@@ -27,6 +27,12 @@ Works on:
 - `content.js` — injects the Print buttons and builds the print view in a hidden iframe
 - `icons/` — `icon.svg` source and rendered PNGs (16/32/48/128)
 
+## Privacy & security
+
+- No permissions, no network requests, no data collected: everything runs in the page.
+- The print view is a hidden iframe with a `script-src 'none'` Content Security Policy, so
+  user-written solution HTML can't run scripts while it is being printed.
+
 ## License
 
 See [LICENSE](LICENSE).
