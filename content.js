@@ -10,7 +10,9 @@ function printHtml(title, subtitle, html) {
   const pageStyles = [...document.querySelectorAll('link[rel="stylesheet"], style')].map(e => e.outerHTML).join('');
   const d = f.contentDocument;
   d.open();
-  d.write(`<!doctype html><html><head><meta charset="utf-8">${pageStyles}
+  // CSP first: solution HTML is user-authored and re-parsed here, so no script may run.
+  d.write(`<!doctype html><html><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="script-src 'none'; object-src 'none'">${pageStyles}
 <style>
   html,body{height:auto!important;overflow:visible!important;background:#fff!important}
   body{font:14px/1.6 -apple-system,Segoe UI,Helvetica,Arial,sans-serif;max-width:800px;margin:32px auto;padding:0 16px;color:#111}
