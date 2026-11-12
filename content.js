@@ -55,9 +55,17 @@ function printProblem() {
   printHtml(title, difficulty, desc.innerHTML);
 }
 
+// Comments are also _markdown and may come first in the DOM: take the one closest to the title.
+function solutionBody() {
+  for (let e = document.querySelector('div[class*="text-[22px]"]'); e; e = e.parentElement) {
+    const m = e.querySelector('div[class*="_markdown"]');
+    if (m) return m;
+  }
+}
+
 function printSolution() {
   const title = document.querySelector('div[class*="text-[22px]"]')?.textContent ?? document.title;
-  const body = document.querySelector('div[class*="_markdown"]');
+  const body = solutionBody();
   if (!body) return alert('LeetPrint: solution content not found.');
   const problem = document.title.replace(/ - LeetCode.*$/, '');
   printHtml(title, `Solution · ${problem}`, body.innerHTML);
@@ -76,7 +84,7 @@ function addButtons() {
   if (!document.getElementById(BTN_ID)) {
     document.querySelector('div.text-title-large')?.parentElement.appendChild(makeButton(BTN_ID, printProblem));
   }
-  if (!document.getElementById(SOL_BTN_ID) && document.querySelector('div[class*="_markdown"]')) {
+  if (!document.getElementById(SOL_BTN_ID) && solutionBody()) {
     document.querySelector('div[class*="text-[22px]"]')?.after(makeButton(SOL_BTN_ID, printSolution));
   }
 }
