@@ -18,10 +18,12 @@ function printHtml(title, subtitle, html) {
   body{font:14px/1.6 -apple-system,Segoe UI,Helvetica,Arial,sans-serif;max-width:800px;margin:32px auto;padding:0 16px;color:#111}
   h1.lp-title{font-size:22px;margin:0 0 4px}
   .lp-sub{color:#666;margin-bottom:20px}
-  pre{background:#f5f5f5;padding:10px;border-radius:4px;white-space:pre-wrap}
-  code{background:#f0f0f0;padding:1px 4px;border-radius:3px}
+  pre{border:1px solid #ccc;padding:10px;border-radius:4px;white-space:pre-wrap}
+  code{padding:1px 4px}
   :not(pre)>code{white-space:nowrap}
-  pre code{background:none;padding:0}
+  pre code{padding:0}
+  /* No fills: they waste ink. Overrides LeetCode's backgrounds too (e.g. code-block wrapper bg-fill-3). */
+  .lp-body,.lp-body *{background:none!important}
   img{max-width:100%}
   table{border-collapse:collapse;margin:8px 0}
   td,th{border:1px solid #999;padding:4px 8px}
