@@ -7,6 +7,7 @@ Chrome extension (Manifest V3) that adds a **🖨 Print** button to LeetCode pro
 - **Problem pages**: button next to the title; prints the title, difficulty and description.
 - **Solution pages**: button under the solution title; prints the solution title, problem name and
   the full write-up, including KaTeX math, images and the currently selected code tab.
+- **Ink-friendly**: no background fills; code blocks get a thin border instead of a gray box.
 
 Works on:
 
@@ -17,9 +18,20 @@ Works on:
 
 ## Install
 
+Get the code, either way:
+
+- **Download**: [LeetPrint.zip](https://github.com/raydaemon/LeetPrint/releases/latest/download/LeetPrint.zip)
+  (latest release) and unzip it, or
+- **Clone**: `git clone https://github.com/raydaemon/LeetPrint.git`
+
+Then:
+
 1. Open `chrome://extensions`, enable **Developer mode**.
-2. Click **Load unpacked**, select this folder.
+2. Click **Load unpacked**, select the `LeetPrint` folder.
 3. Open any problem, e.g. https://leetcode.com/problems/count-shadow-pairs-i/description/
+
+To update: download the new zip (or `git pull`), then click the reload icon on the LeetPrint card
+in `chrome://extensions`.
 
 ## Files
 
