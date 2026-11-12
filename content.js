@@ -28,7 +28,7 @@ function printHtml(title, subtitle, html) {
   button{display:none!important}
   .lp-body h1{font-size:20px;font-weight:600;margin:20px 0 8px}
   .lp-body h2{font-size:17px;font-weight:600;margin:16px 0 6px}
-  .lp-body h3{font-size:15px;font-weight:600;margin:12px 0 4px}
+  .lp-body h3,.lp-body h4,.lp-body h5,.lp-body h6{font-size:15px;font-weight:600;margin:12px 0 4px}
   .lp-body p{margin:8px 0}
   .lp-body ul{list-style:disc;padding-left:24px;margin:8px 0}
   .lp-body ol{list-style:decimal;padding-left:24px;margin:8px 0}

@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "LeetPrint",
-  "version": "6.11.703",
-  "version_name": "6.11.0703",
+  "version": "6.11.1101",
+  "version_name": "6.11.1101",
   "description": "Adds a Print button to LeetCode problem and solution pages.",
   "content_scripts": [
     {
